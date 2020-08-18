@@ -1,0 +1,12 @@
+apply from: '../module.gradle'
+
+dependencies {
+    api project(":domain")
+
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    api "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    api "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
+    api "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
+}

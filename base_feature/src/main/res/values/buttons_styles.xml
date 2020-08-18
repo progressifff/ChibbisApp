@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Button" parent="Base.Widget.AppCompat.Button" />
+
+    <style name="Button.Borderless" parent="Base.Widget.AppCompat.Button.Borderless" />
+
+    <style name="Button.Accent">
+        <item name="android:textAppearance">@style/Text.Medium</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightThemeColorPrimary">#ffffff</color>
+    <color name="lightThemeColorPrimaryDark">#FFFFFF</color>
+    <color name="lightThemeColorAccent">#6200ee</color>
+
+    <color name="darkThemeColorPrimary">#292929</color>
+    <color name="darkThemeColorPrimaryDark">#181818</color>
+    <color name="darkThemeColorAccent">#369eda</color>
+
+
+    <color name="drawer_item_light_color">#363636</color>
+
+
+    <color name="layoutRefresherColorLight">#FFFFFFFF</color>
+    <color name="layoutRefresherColorDark">#101010</color>
+
+    <color name="dividerColor">@color/very_light_gray</color>
+</resources>

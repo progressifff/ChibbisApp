@@ -1,0 +1,20 @@
+apply from: '../module.gradle'
+
+dependencies {
+
+    api "junit:junit:$jUnitVersion",
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    api ("org.robolectric:robolectric:$robolectricVersion"){
+        exclude group: 'com.google.auto.service', module: 'auto-service'
+        exclude group: 'org.apache.maven', module: 'maven-ant-tasks'
+    }
+    api "org.robolectric:shadows-multidex:$robolectricVersion"
+
+    implementation project(':i_network')
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
+    implementation "androidx.test:core:$androidxTestVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+}

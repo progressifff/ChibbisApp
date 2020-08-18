@@ -1,0 +1,7 @@
+apply from: '../module.gradle'
+
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+dependencies {
+    implementation project(":base_feature")
+}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="drawerItemColor" format="reference"/>
+    <attr name="layoutRefresherColor" format="color"/>
+    <attr name="dividerColor" format="color"/>
+</resources>

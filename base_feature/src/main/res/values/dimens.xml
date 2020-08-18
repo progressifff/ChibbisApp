@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="progress_bar_width">20dp</dimen>
+    <dimen name="seek_bar_thumb_width">24dp</dimen>
+    <dimen name="search_view_height">64dp</dimen>
+    <dimen name="divider_left_margin">64dp</dimen>
+
+</resources>

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+
+apply from: '../module.gradle'
+
+dependencies {
+    api project(":base")
+
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
+    api "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    api "androidx.appcompat:appcompat:$androidxVersion"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:$androidXSwrVerison"
+    api "com.google.android.material:material:$materialVersion"
+    api "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    api "androidx.core:core-ktx:$androidxVersion"
+    api "com.xwray:groupie:$groupieVerison"
+    api "com.xwray:groupie-kotlin-android-extensions:$groupieVerison"
+    api "android.arch.paging:runtime:$paginationVersion"
+    api("com.github.bumptech.glide:glide:$glideVersion") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}

@@ -1,0 +1,15 @@
+apply plugin: 'kotlin-kapt'
+
+android {
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+    testImplementation project(":test_utils")
+    testImplementation "com.google.dagger:dagger:$daggerVersion"
+    kaptTest "com.google.dagger:dagger-compiler:$daggerVersion"
+}

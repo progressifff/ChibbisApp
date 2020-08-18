@@ -1,0 +1,22 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/restaurantsFragmentView"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/restaurantsFragmentView"
+        android:name="com.chibbis.f_restaurants.RestaurantsFragmentView"
+        android:label="RestaurantsFragmentView" />
+
+    <fragment
+        android:id="@+id/reviewsFragmentView"
+        android:name="com.chibbis.f_reviews.ReviewsFragmentView"
+        android:label="ReviewsFragmentView" />
+
+    <fragment
+        android:id="@+id/launchDetailsFragmentView"
+        android:name="com.chibbis.f_hits.HitsFragmentView"
+        android:label="HitsFragmentView" />
+
+</navigation>

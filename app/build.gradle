@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../config.gradle'
+apply from: '../buildTypes.gradle'
+
+def config = extensions.getByName("ext")
+
+android {
+    compileSdkVersion config["compileSdkVersion"]
+    buildToolsVersion config["buildToolsVersion"]
+
+    defaultConfig {
+        applicationId config["applicationId"]
+        versionCode config["versionCode"]
+        versionName config["versionName"]
+        minSdkVersion config["minSdkVersion"]
+        targetSdkVersion config["targetSdkVersion"]
+
+        setProperty("archivesBaseName", "$applicationName-$versionName-($versionCode)")
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+}
+
+dependencies {
+    implementation project(":base")
+    implementation project(":base_feature")
+    implementation project(":f_splash")
+    implementation project(":f_main")
+    implementation project(":f_restaurants")
+    implementation project(":f_reviews")
+    implementation project(":f_hits")
+
+    implementation project(":i_network")
+    implementation project(":i_restaurants")
+    implementation project(":i_reviews")
+    implementation project(":i_hits")
+
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.multidex:multidex:$multidexVersion"
+
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+}

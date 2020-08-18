@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    tools:parentTag="android.widget.LinearLayout"
+    tools:orientation="horizontal"
+    tools:gravity="center_vertical">
+
+    <ImageButton
+        android:id="@+id/search_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/content_description"
+        android:padding="8dp"
+        android:src="@drawable/ic_arrow_back" />
+
+    <EditText
+        android:id="@+id/search_et"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@null"
+        android:hint="@string/fragment_search_hint"
+        android:imeOptions="flagNoExtractUi|actionSearch"
+        android:singleLine="true"
+        android:duplicateParentState="true"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black" />
+
+    <ImageButton
+        android:id="@+id/search_clear_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/content_description"
+        android:padding="8dp"
+        android:src="@drawable/ic_close"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+</merge>

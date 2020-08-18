@@ -1,0 +1,16 @@
+include ':app',
+        ':base',
+        ':base_feature',
+        ':domain',
+        ':f_splash',
+        ':f_main',
+        ':f_restaurants',
+        ':f_reviews',
+        ':f_hits',
+        ':i_restaurants',
+        ':i_reviews',
+        ':i_hits',
+        ':i_network',
+        ':test_utils'
+
+rootProject.name = 'ChibbisApp'
