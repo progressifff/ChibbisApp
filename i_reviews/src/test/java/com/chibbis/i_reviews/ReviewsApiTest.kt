@@ -1,16 +1,13 @@
 package com.chibbis.i_reviews
 
-import android.os.Build
+import com.chibbis.i_reviews.di.DaggerTestReviewsComponent
 import com.chibbis.i_reviews.di.TestReviewsComponent
 import com.chibbis.test_utils.BaseNetworkDaggerTest
+import junit.framework.Assert.assertTrue
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import javax.inject.Inject
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.O_MR1])
 class ReviewsApiTest : BaseNetworkDaggerTest<TestReviewsComponent>() {
 
     override val component: TestReviewsComponent = DaggerTestReviewsComponent.builder()
@@ -26,6 +23,9 @@ class ReviewsApiTest : BaseNetworkDaggerTest<TestReviewsComponent>() {
 
     @Test
     fun testSuccessLoadReviews() {
-
+        runBlocking {
+            val reviews = reviewsRepository.getReviews()
+            assertTrue(reviews.isNotEmpty())
+        }
     }
 }

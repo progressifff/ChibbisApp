@@ -1,5 +1,6 @@
 package com.chibbis.i_network.di
 
+import com.chibbis.base.scope.ApplicationScope
 import com.chibbis.i_network.API_URL
 import com.chibbis.i_network.BuildConfig
 import dagger.Module
@@ -9,7 +10,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Singleton
 
 private const val NETWORK_TIMEOUT = 5L //minutes
 
@@ -17,7 +17,7 @@ private const val NETWORK_TIMEOUT = 5L //minutes
 class NetworkModule {
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideHttpLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor()
             .apply {
@@ -30,7 +30,7 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
@@ -43,7 +43,7 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
+    @ApplicationScope
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .client(okHttpClient)
         .baseUrl(API_URL)

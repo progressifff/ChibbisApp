@@ -1,5 +1,6 @@
 package com.chibbis.chibbisapp.di
 
+import com.chibbis.base.scope.ApplicationScope
 import com.chibbis.base_feature.di.ErrorHandlerModule
 import com.chibbis.chibbisapp.App
 import com.chibbis.f_restaurants.di.RestaurantsModule
@@ -10,9 +11,8 @@ import com.chibbis.i_reviews.di.ReviewsInteractorModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,

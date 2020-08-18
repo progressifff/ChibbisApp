@@ -1,16 +1,13 @@
 package com.chibbis.i_hits
 
-import android.os.Build
+import com.chibbis.i_hits.di.DaggerTestHitsComponent
 import com.chibbis.i_hits.di.TestHitsComponent
 import com.chibbis.test_utils.BaseNetworkDaggerTest
+import junit.framework.Assert.assertTrue
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import javax.inject.Inject
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.O_MR1])
 class HitsApiTest : BaseNetworkDaggerTest<TestHitsComponent>() {
 
     override val component: TestHitsComponent = DaggerTestHitsComponent.builder()
@@ -26,6 +23,9 @@ class HitsApiTest : BaseNetworkDaggerTest<TestHitsComponent>() {
 
     @Test
     fun testSuccessLoadHits() {
-
+        runBlocking {
+            val hits = hitsRepository.getHits()
+            assertTrue(hits.isNotEmpty())
+        }
     }
 }

@@ -1,7 +1,5 @@
 package com.chibbis.test_utils
 
-import androidx.test.core.app.ApplicationProvider
-import com.jakewharton.threetenabp.AndroidThreeTen
 import com.chibbis.i_network.di.NetworkModule
 import com.chibbis.test_utils.di.DaggerTestNetworkAppComponent
 import com.chibbis.test_utils.di.TestNetworkAppComponent
@@ -20,6 +18,5 @@ abstract class BaseNetworkDaggerTest<T> {
     @Before
     open fun setUp() {
         inject()
-        AndroidThreeTen.init(ApplicationProvider.getApplicationContext())
     }
 }

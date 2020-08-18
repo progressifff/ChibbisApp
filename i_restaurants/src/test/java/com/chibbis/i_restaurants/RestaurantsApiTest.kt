@@ -1,16 +1,14 @@
 package com.chibbis.i_restaurants
 
-import android.os.Build
+import com.chibbis.i_restaurants.di.DaggerTestRestaurantsComponent
 import com.chibbis.i_restaurants.di.TestRestaurantsComponent
 import com.chibbis.test_utils.BaseNetworkDaggerTest
+import junit.framework.Assert
+import junit.framework.Assert.assertTrue
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import javax.inject.Inject
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [Build.VERSION_CODES.O_MR1])
 class RestaurantsApiTest : BaseNetworkDaggerTest<TestRestaurantsComponent>() {
 
     override val component: TestRestaurantsComponent = DaggerTestRestaurantsComponent.builder()
@@ -26,6 +24,9 @@ class RestaurantsApiTest : BaseNetworkDaggerTest<TestRestaurantsComponent>() {
 
     @Test
     fun testSuccessLoadRestaurants() {
-
+        runBlocking {
+            val restaurants = restaurantsRepository.getRestaurants()
+            assertTrue(restaurants.isNotEmpty())
+        }
     }
 }

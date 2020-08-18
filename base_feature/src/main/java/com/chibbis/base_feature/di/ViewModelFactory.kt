@@ -2,11 +2,11 @@ package com.chibbis.base_feature.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.chibbis.base.scope.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
-import javax.inject.Singleton
 
-@Singleton
+@ApplicationScope
 class ViewModelFactory @Inject constructor(
     private val viewModels: MutableMap<Class<out ViewModel>,
             Provider<ViewModel>>

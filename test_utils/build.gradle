@@ -11,6 +11,7 @@ dependencies {
     api "org.robolectric:shadows-multidex:$robolectricVersion"
 
     implementation project(':i_network')
+    implementation project(':base')
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
