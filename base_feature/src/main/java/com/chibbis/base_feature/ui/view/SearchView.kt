@@ -12,12 +12,13 @@ import com.chibbis.base.mappers.nonNull
 import com.chibbis.base_feature.R
 import kotlinx.android.synthetic.main.view_search.view.*
 
+/**
+ * Вью поиска
+ */
 class SearchView(
     context: Context,
     attributeSet: AttributeSet? = null
 ) : LinearLayout(context, attributeSet) {
-
-    var onBackClickedAction: () -> Unit = {}
 
     init {
         View.inflate(context, R.layout.view_search, this)
@@ -31,7 +32,6 @@ class SearchView(
     }
 
     private fun initListeners() {
-        search_back_btn.setOnClickListener { onBackClickedAction() }
         search_et.addTextChangedListener {
             val query = it?.toString().nonNull
             search_clear_btn.isInvisible = query.isEmpty()

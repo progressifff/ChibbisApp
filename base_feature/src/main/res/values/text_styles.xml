@@ -183,6 +183,10 @@
         <item name="android:textColor">?android:textColorTertiary</item>
     </style>
 
+    <style name="Text.Regular.14.AccentColor">
+        <item name="android:textColor">?android:colorAccent</item>
+    </style>
+
     <style name="Text.Regular.16">
         <item name="android:textSize">16sp</item>
     </style>

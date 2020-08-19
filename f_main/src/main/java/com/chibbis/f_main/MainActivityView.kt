@@ -20,17 +20,15 @@ class MainActivityView : BaseActivityView<MainViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initViews()
+        if (savedInstanceState == null) {
+            initViews()
+        }
     }
 
     private fun initViews() {
         val navigationController = findNavController(R.id.main_host_fragment)
-        main_navigation_view.apply {
-            val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.restaurantsFragmentView, R.id.reviewsFragmentView, R.id.launchDetailsFragmentView))
-            //setupActionBarWithNavController(navigationController, appBarConfiguration)
-            setupWithNavController(navigationController)
-        }
+        main_navigation_view.setupWithNavController(navigationController)
+        main_navigation_view.setOnNavigationItemReselectedListener {}
     }
 }
 

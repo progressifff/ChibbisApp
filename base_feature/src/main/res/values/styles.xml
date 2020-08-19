@@ -1,45 +1,36 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppThemeLight" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="colorPrimary">@color/lightThemeColorPrimary</item>
-        <item name="colorPrimaryDark">@color/lightThemeColorPrimaryDark</item>
-        <item name="colorAccent">@color/lightThemeColorAccent</item>
-
-
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-
-        <item name="windowActionModeOverlay">true</item>
-        <item name="android:windowActionModeOverlay">true</item>
-
-        <item name="android:textColorPrimary">@color/gray_dark</item>
-        <item name="android:textColorSecondary">@color/gray</item>
-        <item name="android:textColorTertiary">@color/white</item>
-
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar.Bridge">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorPrimaryInverse</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorTertiary">@color/textColorTertiary</item>
+        <item name="android:windowBackground">@color/colorWindowBackground</item>
+        <item name="android:colorBackground">@color/colorWindowBackground</item>
+        <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
+        <item name="colorControlHighlight">@color/rippleColor</item>
         <item name="layoutRefresherColor">@color/layoutRefresherColorLight</item>
-
         <item name="dividerColor">@color/dividerColor</item>
 
-<!--        <item name="drawerItemColor">@drawable/drawer_item_color_light</item>-->
     </style>
 
+    <style name="BottomNavigationView" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="itemIconTint">@color/bottom_nav_color</item>
+        <item name="itemTextColor">@color/bottom_nav_color</item>
+        <item name="itemRippleColor">@color/rippleColor</item>
+        <item name="itemTextAppearanceActive">@style/Text.Regular.12</item>
+        <item name="itemTextAppearanceInactive">@style/Text.Regular.12</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
 
-    <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="colorPrimary">@color/darkThemeColorPrimary</item>
-        <item name="colorPrimaryDark">@color/darkThemeColorPrimaryDark</item>
-        <item name="colorAccent">@color/darkThemeColorAccent</item>
-        <item name="windowActionModeOverlay">true</item>
-        <item name="android:windowActionModeOverlay">true</item>
-
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:textColorSecondary">@color/gray</item>
-
-        <item name="layoutRefresherColor">@color/layoutRefresherColorDark</item>
-
-        <item name="dividerColor">@color/dividerColor</item>
-
-<!--        <item name="drawerItemColor">@drawable/drawer_item_color_dark</item>-->
+    <style name="AppShimmer">
+        <item name="shimmer_animation_duration">1200</item>
+        <item name="shimmer_angle">0</item>
+        <item name="shimmer_color">@color/white60</item>
     </style>
 
 </resources>

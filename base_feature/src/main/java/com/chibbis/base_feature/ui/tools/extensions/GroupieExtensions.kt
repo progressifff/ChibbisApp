@@ -20,7 +20,7 @@ fun GroupAdapter<GroupieViewHolder>.tryRemove(contentItem: Item) {
     }
 }
 
-fun <T: Group>GroupAdapter<GroupieViewHolder>.setItems(items: Collection<T>) {
+fun <T: Group>GroupAdapter<*>.setGroups(items: Collection<T>) {
     clear()
     addAll(items)
 }

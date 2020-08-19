@@ -3,34 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
+    android:layout_height="match_parent"
     tools:parentTag="android.widget.LinearLayout"
     tools:orientation="horizontal"
-    tools:gravity="center_vertical">
+    tools:gravity="center_vertical"
+    tools:background="@color/pure_black">
 
-    <ImageButton
-        android:id="@+id/search_back_btn"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/content_description"
         android:padding="8dp"
-        android:src="@drawable/ic_arrow_back" />
+        android:src="@drawable/ic_search" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/search_et"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@null"
-        android:hint="@string/fragment_search_hint"
         android:imeOptions="flagNoExtractUi|actionSearch"
-        android:singleLine="true"
+        android:inputType="text"
+        android:maxLines="1"
         android:duplicateParentState="true"
-        android:textColor="@android:color/black"
-        android:textColorHint="@android:color/black" />
+        android:textAppearance="@style/Text.Regular.16.PrimaryColor" />
 
     <ImageButton
         android:id="@+id/search_clear_btn"

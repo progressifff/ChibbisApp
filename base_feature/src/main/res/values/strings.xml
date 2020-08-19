@@ -4,6 +4,7 @@
 
     <string name="content_description" translatable="false">content_description</string>
     <string name="snackbar_anchor_tag" translatable="false">snackbar_anchor_tag</string>
+    <string name="shimmer_stub_view_tag" translatable="false">shimmer_stub_view_tag</string>
 
     <string name="server_error_message">Произошла ошибка сервера. Попробуйте позже еще раз</string>
     <string name="server_error_not_found">Произошла ошибка, данные не найдены. Попробуйте позже еще раз</string>
@@ -11,6 +12,7 @@
     <string name="forbidden_error_error_message">Доступ запрещен</string>
     <string name="load_data_error">Ошибка загрузки данных</string>
     <string name="empty_data">Данных нет</string>
+    <string name="no_data_found">По данному запросу ничего не найдено</string>
 
     <!-- Buttons -->
     <string name="retry_btn_text">Повторить</string>
@@ -20,7 +22,7 @@
     <string name="bottom_navigation_reviews_title">Отзывы</string>
     <string name="bottom_navigation_hits_title">Хиты продаж</string>
 
-    <!-- Search -->
-    <string name="fragment_search_hint">Search</string>
+    <!-- Поиск -->
+    <string name="fragment_search_hint">Введите название ресторана</string>
 
 </resources>

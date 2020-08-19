@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="restaurant"
+            type="com.chibbis.domain.restaurant.Restaurant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{restaurant.name}"
+            android:textAppearance="@style/Text.Regular.16.PrimaryColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+</layout>

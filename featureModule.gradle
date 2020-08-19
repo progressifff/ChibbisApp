@@ -2,6 +2,12 @@ apply from: '../module.gradle'
 
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
+android {
+    dataBinding {
+        enabled = true
+    }
+}
+
 dependencies {
     implementation project(":base_feature")
 }

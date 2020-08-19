@@ -16,11 +16,11 @@ import java.math.BigDecimal
  */
 data class Restaurant(
     val name: String,
-    val logoUrl: String,
-    val deliveryTimeMinutes: Int,
-    val minCostRubs: BigDecimal,
-    val specializations: List<String>,
-    val deliveryCostRubs: BigDecimal,
-    val positiveReviewsCount: Int,
-    val totalReviewCount: Int
+    val logoUrl: String = "",
+    val deliveryTimeMinutes: Int = 0,
+    val minCostRubs: BigDecimal = BigDecimal.ZERO,
+    val specializations: List<String> = emptyList(),
+    val deliveryCostRubs: BigDecimal = BigDecimal.ZERO,
+    val positiveReviewsCount: Int = 0,
+    val totalReviewCount: Int = 0
 )

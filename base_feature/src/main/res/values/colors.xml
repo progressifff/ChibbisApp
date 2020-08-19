@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lightThemeColorPrimary">#ffffff</color>
-    <color name="lightThemeColorPrimaryDark">#FFFFFF</color>
-    <color name="lightThemeColorAccent">#6200ee</color>
+    <color name="colorPrimary">@color/nero</color>
+    <color name="colorPrimaryDark">@color/pure_black</color>
+    <color name="colorAccent">@color/tangerine_yellow</color>
+    <color name="colorError">@color/radical_red</color>
 
-    <color name="darkThemeColorPrimary">#292929</color>
-    <color name="darkThemeColorPrimaryDark">#181818</color>
-    <color name="darkThemeColorAccent">#369eda</color>
+    <color name="textColorPrimary">@color/pure_white</color>
+    <color name="textColorPrimaryInverse">@color/pure_white</color>
+    <color name="textColorSecondary">@color/nobel</color>
+    <color name="textColorTertiary">@color/dim_grey</color>
 
+    <color name="colorWindowBackground">@color/pure_black</color>
+    <color name="colorWindowBackgroundTransparent">@color/black_24</color>
 
-    <color name="drawer_item_light_color">#363636</color>
-
+    <color name="rippleColor">@color/dim_grey</color>
 
     <color name="layoutRefresherColorLight">#FFFFFFFF</color>
     <color name="layoutRefresherColorDark">#101010</color>

@@ -1,14 +1,44 @@
 package com.chibbis.base.data.wrapper
 
-data class LoadableData<T>(
-    var data: T?,
-    var loadStatus: LoadStatus = LoadStatus.NORMAL
+class LoadableData<T>(
+    private var data: T? = null,
+    private var loadStatus: LoadStatus = LoadStatus.NORMAL,
+    private var isSwr: Boolean = false,
+    var onMainLoading: (Boolean) -> Unit = {},
+    var onSwrLoading: (Boolean) -> Unit = {},
+    var onDataReady: (data: T) -> Unit = {}
 ) {
-    val isNormal get() = loadStatus == LoadStatus.NORMAL
-    val isLoading get() = loadStatus == LoadStatus.LOADING
-    val isError get() = loadStatus == LoadStatus.ERROR
 
-    fun setNormal() { loadStatus = LoadStatus.NORMAL }
-    fun setLoading() { loadStatus = LoadStatus.LOADING }
-    fun setError() { loadStatus = LoadStatus.ERROR }
+    fun update(
+        data: T? = null,
+        loadStatus: LoadStatus? = null,
+        isSwr: Boolean? = null
+    ) {
+        data?.let { this.data = it }
+        loadStatus?.let { this.loadStatus = it }
+        isSwr?.let { this.isSwr = it }
+
+        verifyMainLoading()
+        verifySwrLoading()
+        verifyDataReadyState()
+    }
+
+    private fun verifyMainLoading() {
+        if (data == null && !loadStatus.isNormal) {
+            onMainLoading(loadStatus.isLoading)
+        }
+    }
+
+    private fun verifySwrLoading() {
+        if (isSwr) {
+            onSwrLoading(loadStatus.isLoading)
+        }
+    }
+
+    private fun verifyDataReadyState() {
+        val data = data
+        if (data != null && !loadStatus.isLoading) {
+            onDataReady(data)
+        }
+    }
 }

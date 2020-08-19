@@ -3,4 +3,11 @@
     <attr name="drawerItemColor" format="reference"/>
     <attr name="layoutRefresherColor" format="color"/>
     <attr name="dividerColor" format="color"/>
+
+    <declare-styleable name="ShimmerStubView">
+        <attr name="stubColor" format="reference" />
+        <attr name="isCircle" format="boolean" />
+        <attr name="cornerRadius" />
+    </declare-styleable>
+
 </resources>

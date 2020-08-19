@@ -3,9 +3,13 @@
     package="com.chibbis.f_main">
 
     <application>
+
         <activity
             android:name="com.chibbis.f_main.MainActivityView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustPan" />
+
     </application>
 
 </manifest>

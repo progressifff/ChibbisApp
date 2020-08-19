@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
+import androidx.core.view.children
 import androidx.core.widget.NestedScrollView
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -50,4 +51,25 @@ inline fun <reified T : ViewGroup> View.findAncestor(): T? {
         p = p.parent
     }
     return null
+}
+
+/**
+ * Поиск всех [View] с заданным тегом.
+ */
+fun View.findViewsByTag(tag: String): List<View> {
+    val views = ArrayList<View>()
+    if (this.tag == tag) {
+        views.add(this)
+    }
+    if (this is ViewGroup) {
+        children.forEach { child ->
+            if (child is ViewGroup) {
+                views.addAll(child.findViewsByTag(tag))
+            }
+            if (child.tag == tag) {
+                views.add(child)
+            }
+        }
+    }
+    return views
 }
