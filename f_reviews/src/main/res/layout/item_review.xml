@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import
+            alias="DomainExtensions"
+            type="com.chibbis.base_feature.ui.tools.extensions.DomainExtensionsKt" />
+
+        <variable
+            name="review"
+            type="com.chibbis.domain.review.Review" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:id="@+id/review_smile_iv"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/content_description"
+            android:scaleType="fitCenter"
+            android:src="@{DomainExtensions.getSmile(review, context)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/review_restaurant_name_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{review.restaurantName}"
+            android:textAppearance="@style/Text.Regular.18.PrimaryColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/review_smile_iv"
+            app:layout_constraintTop_toTopOf="@+id/review_smile_iv" />
+
+        <TextView
+            android:id="@+id/review_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@{review.message}"
+            android:textAppearance="@style/Text.Light.16.PrimaryColor"
+            app:layout_constraintEnd_toEndOf="@+id/review_restaurant_name_tv"
+            app:layout_constraintStart_toStartOf="@+id/review_restaurant_name_tv"
+            app:layout_constraintTop_toBottomOf="@+id/review_restaurant_name_tv" />
+
+        <TextView
+            android:id="@+id/review_fio_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{review.userFIO}"
+            android:textAppearance="@style/Text.Regular.14.PrimaryColor"
+            app:layout_constraintEnd_toEndOf="@+id/review_tv"
+            app:layout_constraintStart_toStartOf="@+id/review_tv"
+            app:layout_constraintTop_toBottomOf="@+id/review_tv" />
+
+        <TextView
+            android:id="@+id/review_date_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{DomainExtensions.getFormattedDate(review)}"
+            android:textAppearance="@style/Text.Bold.14.SecondaryColor"
+            app:layout_constraintEnd_toEndOf="@+id/review_fio_tv"
+            app:layout_constraintStart_toStartOf="@+id/review_fio_tv"
+            app:layout_constraintTop_toBottomOf="@+id/review_fio_tv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

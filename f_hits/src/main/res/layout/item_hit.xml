@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -18,14 +19,71 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_marginEnd="16dp" >
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:gravity="center"
-           android:textAppearance="@style/Text.Regular.16.PrimaryColor"
-           android:text="LOLO" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/hit_food_iv"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="centerCrop"
+                app:errorImage="@{@drawable/ic_fastfood}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:url="@{hit.productImageUrl}" />
+
+            <TextView
+                android:id="@+id/hit_food_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@{hit.restaurantName}"
+                android:textAppearance="@style/Text.Regular.18.PrimaryColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/hit_food_iv"
+                app:layout_constraintTop_toTopOf="@+id/hit_food_iv" />
+
+            <TextView
+                android:id="@+id/hit_restaurant_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{hit.productName}"
+                android:layout_marginTop="6dp"
+                android:textAppearance="@style/Text.Light.16.PrimaryColor"
+                app:layout_constraintStart_toStartOf="@+id/hit_food_name_tv"
+                app:layout_constraintEnd_toEndOf="@+id/hit_food_name_tv"
+                app:layout_constraintTop_toBottomOf="@+id/hit_food_name_tv" />
+
+            <TextView
+                android:id="@+id/hit_description_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{DomainExtensions.getComposition(hit, context)}"
+                android:layout_marginTop="6dp"
+                android:textAppearance="@style/Text.Light.14.PrimaryColor"
+                app:layout_constraintStart_toStartOf="@+id/hit_restaurant_name_tv"
+                app:layout_constraintEnd_toEndOf="@+id/hit_restaurant_name_tv"
+                app:layout_constraintTop_toBottomOf="@+id/hit_restaurant_name_tv" />
+
+            <TextView
+                android:id="@+id/hit_price_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{DomainExtensions.getPrice(hit, context)}"
+                android:layout_marginTop="6dp"
+                android:textAppearance="@style/Text.Bold.16.PrimaryColor"
+                app:layout_constraintStart_toStartOf="@+id/hit_description_tv"
+                app:layout_constraintTop_toBottomOf="@+id/hit_description_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -11,6 +11,8 @@ import com.xwray.groupie.databinding.BindableItem
 class HitItem(private val hit: Hit) : BindableItem<ItemHitBinding>() {
     override fun getLayout(): Int = R.layout.item_hit
 
+    override fun getId(): Long = hit.id.hashCode().toLong()
+
     override fun bind(viewBinding: ItemHitBinding, position: Int) {
         viewBinding.hit = hit
     }

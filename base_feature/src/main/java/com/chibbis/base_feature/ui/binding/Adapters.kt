@@ -24,6 +24,6 @@ fun goneUnless(view: View, visible: Boolean) {
 @BindingAdapter("app:url", "app:errorImage")
 fun loadImage(view: ImageView, url: String?, errorImage: Drawable?) {
     if (url != null && errorImage != null) {
-        Glide.with(view.context).load(url).error(errorImage).into(view)
+        Glide.with(view.context).load(url).error(errorImage).placeholder(errorImage).into(view)
     }
 }

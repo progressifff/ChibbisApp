@@ -23,6 +23,8 @@
         <item quantity="other">%d отзывов</item>
     </plurals>
 
+    <string name="price_text">%s ₽</string>
+
     <string name="reviews_count" formatted="false">%1$d%% • %2$s</string>
 
     <!-- Buttons -->
@@ -40,9 +42,12 @@
     <string name="restaurant_review_text">%1$d</string>
     <string name="restaurant_delivery_time_text">%d мин.</string>
     <string name="restaurant_min_cost_text">от %s ₽</string>
-    <string name="restaurant_delivery_cost_text">%s ₽</string>
 
     <!-- Хиты -->
     <string name="hits_title_text">@string/bottom_navigation_hits_title</string>
+    <string name="hit_composition_text">Состав: %s</string>
+
+    <!-- Отзывы -->
+    <string name="reviews_title_text">@string/bottom_navigation_reviews_title</string>
 
 </resources>

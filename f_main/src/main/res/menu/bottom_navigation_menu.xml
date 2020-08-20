@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/restaurantsFragmentView"
+        android:id="@+id/restaurants"
         android:icon="@drawable/ic_restaurant"
         android:title="@string/bottom_navigation_restaurants_title" />
 
     <item
-        android:id="@+id/launchDetailsFragmentView"
+        android:id="@+id/hits"
         android:icon="@drawable/ic_star"
         android:title="@string/bottom_navigation_hits_title" />
 
     <item
-        android:id="@+id/reviewsFragmentView"
+        android:id="@+id/reviews"
         android:icon="@drawable/ic_answer"
         android:title="@string/bottom_navigation_reviews_title" />
 

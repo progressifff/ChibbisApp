@@ -13,8 +13,7 @@
         <item name="android:colorBackground">@color/colorWindowBackground</item>
         <item name="bottomNavigationStyle">@style/BottomNavigationView</item>
         <item name="colorControlHighlight">@color/rippleColor</item>
-        <item name="layoutRefresherColor">@color/layoutRefresherColorLight</item>
-        <item name="dividerColor">@color/dividerColor</item>
+        <item name="android:listDivider">@color/dividerColor</item>
         <item name="stubColor">@color/colorError</item>
     </style>
 

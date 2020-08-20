@@ -16,8 +16,6 @@ import kotlinx.android.synthetic.main.fragment_hits.*
  */
 class HitsFragmentView : BaseFragmentView<HitsViewModel>() {
 
-    private val groupAdapter = GroupAdapter<GroupieViewHolder>()
-
     override val viewModelClass = HitsViewModel::class.java
 
     override fun getContentView(): Int = R.layout.fragment_hits
@@ -42,6 +40,6 @@ class HitsFragmentView : BaseFragmentView<HitsViewModel>() {
     }
 
     private fun initViews() {
-        hits_rv.adapter = groupAdapter
+        hits_rv.adapter = GroupAdapter<GroupieViewHolder>()
     }
 }

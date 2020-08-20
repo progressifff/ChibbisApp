@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/hits"
+    app:startDestination="@+id/hitsFragmentView"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/hitsFragmentView"
+        android:name="com.chibbis.f_hits.HitsFragmentView"
+        android:label="HitsFragmentView" />
+
+</navigation>

@@ -70,7 +70,6 @@ class HitsViewModel @Inject constructor(
         loadHitsJob = doWork(
             {
                 hitsData.update(isSwr = isSwr, loadStatus = LoadStatus.LOADING)
-                delay(3000)
                 val hits = hitsInteractor.getHits()
                 hitsData.update(data = hits, loadStatus = LoadStatus.NORMAL)
             },

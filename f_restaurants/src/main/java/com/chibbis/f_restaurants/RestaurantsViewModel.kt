@@ -11,7 +11,6 @@ import com.chibbis.domain.restaurant.Restaurant
 import com.chibbis.f_restaurants.data.RestaurantsBundleUi
 import com.chibbis.i_restaurants.RestaurantsInteractor
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 /**
@@ -74,7 +73,6 @@ class RestaurantsViewModel @Inject constructor(
         loadRestaurantsJob = doWork(
             {
                 restaurantsData.update(isSwr = isSwr, loadStatus = LoadStatus.LOADING)
-                delay(3000)
                 val restaurants = restaurantsInteractor.getRestaurants()
                 restaurantsData.update(data = restaurants, loadStatus = LoadStatus.NORMAL)
             },

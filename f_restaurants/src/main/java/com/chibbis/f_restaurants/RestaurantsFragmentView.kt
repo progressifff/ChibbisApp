@@ -17,8 +17,6 @@ import kotlinx.android.synthetic.main.fragment_restaurants.*
  */
 class RestaurantsFragmentView : BaseFragmentView<RestaurantsViewModel>() {
 
-    private val groupAdapter = GroupAdapter<GroupieViewHolder>()
-
     override val viewModelClass = RestaurantsViewModel::class.java
 
     override fun getContentView(): Int = R.layout.fragment_restaurants
@@ -43,7 +41,7 @@ class RestaurantsFragmentView : BaseFragmentView<RestaurantsViewModel>() {
     }
 
     private fun initViews() {
-        restaurants_rv.adapter = groupAdapter
+        restaurants_rv.adapter = GroupAdapter<GroupieViewHolder>()
         restaurants_search_view.addQueryTextWatcher(
             DebounceTextChangedListener(
                 lifecycleOwner = this,

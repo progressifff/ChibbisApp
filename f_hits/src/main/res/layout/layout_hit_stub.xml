@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/AppCardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.chibbis.base_feature.ui.view.ShimmerStubView
+            android:id="@+id/hit_image_stub"
+            android:layout_width="108dp"
+            android:layout_height="108dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:stubColor="@color/stubColor" />
+
+        <com.chibbis.base_feature.ui.view.ShimmerStubView
+            android:id="@+id/hit_title_stub"
+            android:layout_width="164dp"
+            android:layout_height="18dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hit_image_stub"
+            app:stubColor="@color/stubColor" />
+
+        <com.chibbis.base_feature.ui.view.ShimmerStubView
+            android:id="@+id/restaurant_subtitle_stub"
+            android:layout_width="112dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/hit_title_stub"
+            app:layout_constraintTop_toBottomOf="@+id/hit_title_stub"
+            app:stubColor="@color/stubColor" />
+
+        <com.chibbis.base_feature.ui.view.ShimmerStubView
+            android:layout_width="32dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/restaurant_subtitle_stub"
+            app:stubColor="@color/stubColor" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

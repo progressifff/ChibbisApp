@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginEnd="16dp">
+
+    <com.chibbis.base_feature.ui.view.ShimmerStubView
+        android:id="@+id/review_image_stub"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:stubColor="@color/stubColor" />
+
+    <com.chibbis.base_feature.ui.view.ShimmerStubView
+        android:id="@+id/review_title_stub"
+        android:layout_width="164dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/review_image_stub"
+        app:layout_constraintTop_toTopOf="@+id/review_image_stub"
+        app:stubColor="@color/stubColor" />
+
+    <com.chibbis.base_feature.ui.view.ShimmerStubView
+        android:id="@+id/review_subtitle_stub"
+        android:layout_width="112dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/review_title_stub"
+        app:layout_constraintTop_toBottomOf="@+id/review_title_stub"
+        app:stubColor="@color/stubColor" />
+
+    <com.chibbis.base_feature.ui.view.ShimmerStubView
+        android:layout_width="48dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/review_subtitle_stub"
+        app:layout_constraintTop_toBottomOf="@+id/review_subtitle_stub"
+        app:stubColor="@color/stubColor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

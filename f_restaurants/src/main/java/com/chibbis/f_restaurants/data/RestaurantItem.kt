@@ -11,6 +11,8 @@ import com.xwray.groupie.databinding.BindableItem
 class RestaurantItem(val restaurant: Restaurant) : BindableItem<ItemRestaurantBinding>() {
     override fun getLayout(): Int = R.layout.item_restaurant
 
+    override fun getId(): Long = restaurant.name.hashCode().toLong()
+
     override fun bind(viewBinding: ItemRestaurantBinding, position: Int) {
         viewBinding.restaurant = restaurant
     }
