@@ -5,6 +5,7 @@ import android.util.Log
 import com.chibbis.base_feature.R
 import com.chibbis.base_feature.ui.message.MessageController
 import retrofit2.HttpException
+import java.io.IOException
 import javax.inject.Inject
 
 class StandardErrorHandler @Inject constructor(private val messageController: MessageController) :
@@ -12,7 +13,7 @@ class StandardErrorHandler @Inject constructor(private val messageController: Me
     override fun handleError(t: Throwable) {
         when (t) {
             is HttpException -> handleHttpException(t)
-            else -> handleOtherException(t)
+            is IOException -> handleNoInternetException()
         }
     }
 
@@ -30,18 +31,13 @@ class StandardErrorHandler @Inject constructor(private val messageController: Me
         }
     }
 
-    private fun handleOtherException(t: Throwable) {
-
+    private fun handleNoInternetException() {
+        messageController.showSnack(R.string.no_internet_connection_error_message)
     }
 
-    companion object {
-        val CODE_200 = 200
-        val CODE_304 = 304
-        val CODE_401 = 401
-        val CODE_400 = 400
+    private companion object {
         val CODE_403 = 403
         val CODE_404 = 404
         val CODE_500 = 500
-        val UNSPECIFIED = 0
     }
 }

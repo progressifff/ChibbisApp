@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.view_search.view.*
 /**
  * Вью поиска
  */
-class SearchView(
+class SearchView @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null
 ) : LinearLayout(context, attributeSet) {

@@ -8,5 +8,6 @@ dependencies {
 
     api "com.squareup.retrofit2:retrofit:$retrofitVersion"
     api "com.squareup.retrofit2:converter-moshi:$converterMoshiVersion"
+    api ("com.squareup.okhttp3:okhttp:$okHttpVersion") { force = true }
     api "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
 }

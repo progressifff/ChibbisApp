@@ -63,7 +63,7 @@ class RestaurantsViewModel @Inject constructor(
     private fun reactToRestaurantsReady(restaurants: List<Restaurant>) {
         restaurantsListMutableLiveData.apply {
             when (val value = value) {
-                is RestaurantsBundleUi -> value.restaurants = restaurants
+                is RestaurantsBundleUi -> value.data = restaurants
                 else -> postValue(RestaurantsBundleUi(restaurants = restaurants))
             }
         }

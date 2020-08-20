@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import
+            alias="DomainExtensions"
+            type="com.chibbis.base_feature.ui.tools.extensions.DomainExtensionsKt" />
+
+        <variable
+            name="hit"
+            type="com.chibbis.domain.hit.Hit" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:textAppearance="@style/Text.Regular.16.PrimaryColor"
+           android:text="LOLO" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

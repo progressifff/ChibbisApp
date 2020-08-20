@@ -1,22 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import
+            alias="DomainExtensions"
+            type="com.chibbis.base_feature.ui.tools.extensions.DomainExtensionsKt" />
+
         <variable
             name="restaurant"
             type="com.chibbis.domain.restaurant.Restaurant" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.google.android.material.card.MaterialCardView
+        style="@style/AppCardView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{restaurant.name}"
-            android:textAppearance="@style/Text.Regular.16.PrimaryColor" />
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    
+            <ImageView
+                android:id="@+id/restaurant_logo_iv"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="centerCrop"
+                app:errorImage="@{@drawable/ic_restaurant}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:url="@{restaurant.logoUrl}" />
+
+            <TextView
+                android:id="@+id/restaurant_name_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@{restaurant.name}"
+                android:textAppearance="@style/Text.Light.18.PrimaryColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/restaurant_logo_iv"
+                app:layout_constraintTop_toTopOf="@+id/restaurant_logo_iv" />
+
+            <TextView
+                android:id="@+id/restaurant_spec_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@{DomainExtensions.getSpecialization(restaurant)}"
+                android:textAppearance="@style/Text.Regular.14.SecondaryColor"
+                app:layout_constraintEnd_toEndOf="@+id/restaurant_name_tv"
+                app:layout_constraintStart_toStartOf="@+id/restaurant_name_tv"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_name_tv" />
+
+            <TextView
+                android:id="@+id/restaurant_reviews_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="@{DomainExtensions.getReviews(restaurant, context)}"
+                android:textAppearance="@style/Text.Regular.14.SecondaryColor"
+                app:layout_constraintEnd_toEndOf="@+id/restaurant_spec_tv"
+                app:layout_constraintStart_toStartOf="@+id/restaurant_spec_tv"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_spec_tv" />
+
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/history_header_flow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:constraint_referenced_ids="restaurant_delivery_time_chip,restaurant_min_cost_chip, restaurant_delivery_cost_chip"
+                app:flow_horizontalBias="0"
+                app:flow_horizontalGap="6dp"
+                app:flow_horizontalStyle="packed"
+                app:flow_verticalBias="0"
+                app:flow_verticalGap="6dp"
+                app:flow_wrapMode="chain"
+                app:layout_constraintEnd_toEndOf="@+id/restaurant_spec_tv"
+                app:layout_constraintStart_toStartOf="@+id/restaurant_logo_iv"
+                app:layout_constraintTop_toBottomOf="@+id/restaurant_reviews_tv" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/restaurant_delivery_time_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@{DomainExtensions.getDeliveryTime(restaurant, context)}"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/restaurant_min_cost_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@{DomainExtensions.getMinCost(restaurant, context)}"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/restaurant_delivery_cost_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:text="@{DomainExtensions.getDeliveryCost(restaurant, context)}"
+                app:chipIcon="@drawable/ic_car"
+                app:chipIconTint="?attr/colorAccent"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </layout>

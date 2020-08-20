@@ -2,7 +2,8 @@
 <resources>
 
     <dimen name="search_view_corner_radius">12dp</dimen>
-
+    <dimen name="base_card_corner_radius">12dp</dimen>
+    <dimen name="review_thumbs_up_size">18dp</dimen>
     <dimen name="search_view_height">64dp</dimen>
     <dimen name="divider_left_margin">64dp</dimen>
 

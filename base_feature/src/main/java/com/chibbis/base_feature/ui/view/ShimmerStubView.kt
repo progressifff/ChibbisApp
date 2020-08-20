@@ -3,6 +3,7 @@ package com.chibbis.base_feature.ui.view
 import android.content.Context
 import android.graphics.Color
 import android.util.AttributeSet
+import android.view.View
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import androidx.cardview.widget.CardView
 import com.chibbis.base_feature.R
@@ -39,6 +40,12 @@ class ShimmerStubView @JvmOverloads constructor(
     private fun addStubView() {
         shimmerView = AppShimmer(context).apply {
             layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
+            addView(
+                View(context).apply {
+                    layoutParams = LayoutParams(MATCH_PARENT, MATCH_PARENT)
+                    background = this@ShimmerStubView.background
+                }
+            )
         }
         addView(shimmerView)
     }

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar.Bridge">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -15,7 +15,7 @@
         <item name="colorControlHighlight">@color/rippleColor</item>
         <item name="layoutRefresherColor">@color/layoutRefresherColorLight</item>
         <item name="dividerColor">@color/dividerColor</item>
-
+        <item name="stubColor">@color/colorError</item>
     </style>
 
     <style name="BottomNavigationView" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -30,7 +30,13 @@
     <style name="AppShimmer">
         <item name="shimmer_animation_duration">1200</item>
         <item name="shimmer_angle">0</item>
-        <item name="shimmer_color">@color/white60</item>
+        <item name="shimmer_color">@color/white20</item>
+    </style>
+
+    <style name="AppCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">?attr/colorPrimary</item>
+        <item name="cardCornerRadius">@dimen/base_card_corner_radius</item>
+        <item name="cardPreventCornerOverlap">false</item>
     </style>
 
 </resources>

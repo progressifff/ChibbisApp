@@ -4,15 +4,15 @@
     <style name="Text" />
 
     <style name="Text.Regular">
-        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:fontFamily">@font/roboto_condensed_regular</item>
     </style>
 
     <style name="Text.Italic">
-        <item name="android:fontFamily">@font/roboto_italic</item>
+        <item name="android:fontFamily">@font/roboto_condensed_italic</item>
     </style>
 
     <style name="Text.Light">
-        <item name="android:fontFamily">@font/roboto_light</item>
+        <item name="android:fontFamily">@font/roboto_condensed_light</item>
     </style>
 
     <style name="Text.Medium">
@@ -20,7 +20,7 @@
     </style>
 
     <style name="Text.Bold">
-        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:fontFamily">@font/roboto_condensed_bold</item>
     </style>
 
     <style name="Text.Light.11">

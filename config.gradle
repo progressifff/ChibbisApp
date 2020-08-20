@@ -38,7 +38,8 @@ ext {
 
     //Retrofit
     retrofitVersion = '2.8.1'
-    okHttpInterceptorVersion = '4.4.1'
+    okHttpVersion = '3.12.0'
+    okHttpInterceptorVersion = '3.12.0'
 
     //Moshi
     converterMoshiVersion = '2.6.2'

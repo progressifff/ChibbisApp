@@ -18,8 +18,8 @@ class LoadableData<T>(
         loadStatus?.let { this.loadStatus = it }
         isSwr?.let { this.isSwr = it }
 
-        verifyMainLoading()
         verifySwrLoading()
+        verifyMainLoading()
         verifyDataReadyState()
     }
 

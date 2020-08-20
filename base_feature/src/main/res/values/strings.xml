@@ -6,6 +6,7 @@
     <string name="snackbar_anchor_tag" translatable="false">snackbar_anchor_tag</string>
     <string name="shimmer_stub_view_tag" translatable="false">shimmer_stub_view_tag</string>
 
+    <string name="no_internet_connection_error_message">Отсутствует соединение с интернетом</string>
     <string name="server_error_message">Произошла ошибка сервера. Попробуйте позже еще раз</string>
     <string name="server_error_not_found">Произошла ошибка, данные не найдены. Попробуйте позже еще раз</string>
     <string name="default_http_error_message">Произошла ошибка загрузки данных, возможно, не вся информация на экране актуальна</string>
@@ -13,6 +14,16 @@
     <string name="load_data_error">Ошибка загрузки данных</string>
     <string name="empty_data">Данных нет</string>
     <string name="no_data_found">По данному запросу ничего не найдено</string>
+
+    <plurals name="reviews_count_plurals">
+        <item quantity="one">%d отзыв</item>
+        <item quantity="two">%d отзыва</item>
+        <item quantity="few">%d отзыва</item>
+        <item quantity="many">%d отзывов</item>
+        <item quantity="other">%d отзывов</item>
+    </plurals>
+
+    <string name="reviews_count" formatted="false">%1$d%% • %2$s</string>
 
     <!-- Buttons -->
     <string name="retry_btn_text">Повторить</string>
@@ -24,5 +35,14 @@
 
     <!-- Поиск -->
     <string name="fragment_search_hint">Введите название ресторана</string>
+
+    <!-- Рестораны -->
+    <string name="restaurant_review_text">%1$d</string>
+    <string name="restaurant_delivery_time_text">%d мин.</string>
+    <string name="restaurant_min_cost_text">от %s ₽</string>
+    <string name="restaurant_delivery_cost_text">%s ₽</string>
+
+    <!-- Хиты -->
+    <string name="hits_title_text">@string/bottom_navigation_hits_title</string>
 
 </resources>

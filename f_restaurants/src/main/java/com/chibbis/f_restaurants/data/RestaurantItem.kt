@@ -8,7 +8,7 @@ import com.xwray.groupie.databinding.BindableItem
 /**
  * Элемент UI списка ресторанов
  */
-class RestaurantItem(private val restaurant: Restaurant) : BindableItem<ItemRestaurantBinding>() {
+class RestaurantItem(val restaurant: Restaurant) : BindableItem<ItemRestaurantBinding>() {
     override fun getLayout(): Int = R.layout.item_restaurant
 
     override fun bind(viewBinding: ItemRestaurantBinding, position: Int) {

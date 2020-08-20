@@ -10,7 +10,7 @@
     <color name="pure_white">#FFFFFF</color>
     <color name="nobel">#999999</color>
     <color name="dim_grey">#666666</color>
-
+    <color name="light_green">#27AE60</color>
 
 
     <color name="light_black">#333333</color>
@@ -19,7 +19,7 @@
     <color name="very_light_gray">#E5EFF2</color>
     <color name="gray_dark">#262626</color>
     <color name="gray_transparent">#4D262626</color>
-    <color name="light_green">#27AE60</color>
+
     <color name="green">#2FA358</color>
     <color name="dark_green">#00A197</color>
     <color name="white">#FFFFFF</color>

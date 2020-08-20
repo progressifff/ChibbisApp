@@ -4,6 +4,7 @@ import androidx.annotation.LayoutRes
 import com.chibbis.base_feature.R
 import com.chibbis.base_feature.ui.tools.extensions.findViewsByTag
 import com.chibbis.base_feature.ui.view.AppShimmer
+import com.chibbis.base_feature.ui.view.ShimmerStubView
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 
@@ -15,7 +16,7 @@ class RecyclerStubItem(
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.itemView
             .findViewsByTag(viewHolder.itemView.context.getString(R.string.shimmer_stub_view_tag))
-            .filterIsInstance<AppShimmer>()
+            .filterIsInstance<ShimmerStubView>()
             .map { it.isLoading = isLoading }
     }
 

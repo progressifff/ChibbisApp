@@ -17,7 +17,8 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:animateLayoutChanges="true">
+            android:animateLayoutChanges="true"
+            android:background="?android:attr/windowBackground">
 
             <com.chibbis.base_feature.ui.view.SearchView
                 android:id="@+id/restaurants_search_view"
@@ -28,8 +29,8 @@
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/search_view_bg"
-                app:layout_scrollFlags="enterAlways|scroll"
-                app:goneUnless="@{viewModel.restaurantsListLiveData instanceof com.chibbis.f_restaurants.data.RestaurantsBundleUi}"/>
+                app:goneUnless="@{viewModel.restaurantsListLiveData instanceof com.chibbis.f_restaurants.data.RestaurantsBundleUi}"
+                app:layout_scrollFlags="enterAlways|scroll" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,13 +39,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:refreshing="@{viewModel.swrLiveData}"
-            app:onRefreshListener="@{() -> viewModel.onRefresh()}">
+            app:onRefreshListener="@{() -> viewModel.onRefresh()}"
+            app:refreshing="@{viewModel.swrLiveData}">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/restaurants_rv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingBottom="12dp"
                 app:items="@{viewModel.restaurantsListLiveData.recyclerContent}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 

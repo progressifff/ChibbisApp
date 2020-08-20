@@ -1,5 +1,1 @@
 apply from: '../interactorModule.gradle'
-
-dependencies {
-
-}
