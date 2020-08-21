@@ -38,7 +38,8 @@
                 app:errorImage="@{@drawable/ic_fastfood}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:url="@{hit.productImageUrl}" />
+                app:url="@{hit.productImageUrl}"
+                />
 
             <TextView
                 android:id="@+id/hit_food_name_tv"

@@ -4,7 +4,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-private const val SERVER_DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss.SSS"
+private const val SERVER_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS"
 
 val dateTimeFormatter: DateFormat = SimpleDateFormat(SERVER_DATE_TIME_FORMAT, Locale.ENGLISH)
 

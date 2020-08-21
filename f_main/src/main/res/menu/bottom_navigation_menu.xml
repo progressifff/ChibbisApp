@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_answer"
         android:title="@string/bottom_navigation_reviews_title" />
 
+    <item
+        android:id="@+id/more"
+        android:icon="@drawable/ic_more"
+        android:title="@string/bottom_navigation_more_title" />
+
 </menu>

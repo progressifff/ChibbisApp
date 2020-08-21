@@ -41,6 +41,7 @@ dependencies {
     implementation project(":f_main")
     implementation project(":f_restaurants")
     implementation project(":f_reviews")
+    implementation project(":f_more")
     implementation project(":f_hits")
 
     implementation project(":i_network")

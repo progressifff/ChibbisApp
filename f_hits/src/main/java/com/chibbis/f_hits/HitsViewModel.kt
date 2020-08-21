@@ -1,5 +1,7 @@
 package com.chibbis.f_hits
 
+import android.graphics.drawable.Drawable
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.chibbis.base.data.wrapper.LoadStatus
@@ -11,7 +13,6 @@ import com.chibbis.domain.hit.Hit
 import com.chibbis.f_hits.data.HitsBundleUi
 import com.chibbis.i_hits.HitsInteractor
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 /**
@@ -25,18 +26,17 @@ class HitsViewModel @Inject constructor(
 
     private val hitsListMutableLiveData = MutableLiveData<RecyclerContent>()
     private val swrMutableLiveData = MutableLiveData<Boolean>()
-    private val hitsStubContent =
-        RecyclerStubContent(layoutRes = R.layout.item_hits_stub)
-
-    private var loadHitsJob: Job? = null
-    private var hitsData = LoadableData(
+    private val hitsStubContent = RecyclerStubContent(layoutRes = R.layout.item_hits_stub)
+    private val hitsData = LoadableData(
         onMainLoading = ::reactToMainLoading,
         onSwrLoading = ::reactToSwrLoading,
         onDataReady = ::reactToHitsReady
     )
+    private var loadHitsJob: Job? = null
 
     val restaurantsListLiveData: LiveData<RecyclerContent> = hitsListMutableLiveData
     val swrLiveData: LiveData<Boolean> = swrMutableLiveData
+    var hitLargeImageObservable = ObservableField<Drawable?>()
 
     init {
         load()
@@ -44,6 +44,10 @@ class HitsViewModel @Inject constructor(
 
     fun onRefresh() {
         load(isSwr = true)
+    }
+
+    fun onHitIncreasedImageClicked() {
+        hitLargeImageObservable.set(null)
     }
 
     private fun reactToMainLoading(isLoading: Boolean) {
@@ -60,7 +64,7 @@ class HitsViewModel @Inject constructor(
         hitsListMutableLiveData.apply {
             when (val value = value) {
                 is HitsBundleUi -> value.data = hits
-                else -> postValue(HitsBundleUi(hits))
+                else -> postValue(HitsBundleUi(hits) { hitLargeImageObservable.set(it) })
             }
         }
     }

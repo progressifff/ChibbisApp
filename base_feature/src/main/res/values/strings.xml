@@ -34,6 +34,7 @@
     <string name="bottom_navigation_restaurants_title">Рестораны</string>
     <string name="bottom_navigation_reviews_title">Отзывы</string>
     <string name="bottom_navigation_hits_title">Хиты продаж</string>
+    <string name="bottom_navigation_more_title">Ещё</string>
 
     <!-- Поиск -->
     <string name="fragment_search_hint">Введите название ресторана</string>
@@ -49,5 +50,17 @@
 
     <!-- Отзывы -->
     <string name="reviews_title_text">@string/bottom_navigation_reviews_title</string>
+
+    <!-- Ещё -->
+    <string name="more_title_text">@string/bottom_navigation_more_title</string>
+
+    <!-- Диалог оценки приложения -->
+    <string name="app_rate_dialog_title_text">Как вы оцениваете наше приложение?</string>
+    <string name="app_rate_one_star_text">Ужасно</string>
+    <string name="app_rate_two_stars_text">Плохо</string>
+    <string name="app_rate_three_stars_text">Удовлетворительно</string>
+    <string name="app_rate_four_stars_text">Хорошо</string>
+    <string name="app_rate_five_stars_text">Отлично</string>
+    <string name="app_rate_dialog_rate_btn_text">Оценить</string>
 
 </resources>

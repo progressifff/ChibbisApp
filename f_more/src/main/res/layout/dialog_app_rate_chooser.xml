@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="32dp"
+    android:background="@drawable/bg_popup_dialog_confirm">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/app_rate_dialog_close_ib"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_close_rounded" />
+
+    <TextView
+        android:id="@+id/app_rate_dialog_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="@string/app_rate_dialog_title_text"
+        android:textAppearance="@style/Text.Bold.20.PrimaryColor" />
+
+    <com.chibbis.base_feature.ui.view.RateView
+        android:id="@+id/app_rate_dialog_rate_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="20dp"
+        app:starSpacing="@dimen/rate_view_star_spacing" />
+
+    <TextView
+        android:id="@+id/app_rate_dialog_rate_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:textAppearance="@style/Text.Regular.14.SecondaryColor"
+        tools:text="Ужасно" />
+
+    <Button
+        android:id="@+id/app_rate_dialog_rate_btn"
+        style="@style/Button.Accent.16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:text="@string/app_rate_dialog_rate_btn_text" />
+
+</LinearLayout>

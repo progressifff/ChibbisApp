@@ -26,13 +26,12 @@ class RestaurantsViewModel @Inject constructor(
     private val swrMutableLiveData = MutableLiveData<Boolean>()
     private val restaurantsStubContent =
         RecyclerStubContent(layoutRes = R.layout.item_restaurants_stub)
-
-    private var loadRestaurantsJob: Job? = null
-    private var restaurantsData = LoadableData(
+    private val restaurantsData = LoadableData(
         onMainLoading = ::reactToMainLoading,
         onSwrLoading = ::reactToSwrLoading,
         onDataReady = ::reactToRestaurantsReady
     )
+    private var loadRestaurantsJob: Job? = null
 
     val restaurantsListLiveData: LiveData<RecyclerContent> = restaurantsListMutableLiveData
     val swrLiveData: LiveData<Boolean> = swrMutableLiveData

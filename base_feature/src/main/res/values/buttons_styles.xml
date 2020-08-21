@@ -6,7 +6,13 @@
     <style name="Button.Borderless" parent="Base.Widget.AppCompat.Button.Borderless" />
 
     <style name="Button.Accent">
-        <item name="android:textAppearance">@style/Text.Medium</item>
+        <item name="android:textAppearance">@style/Text.Regular</item>
+    </style>
+
+    <style name="Button.Accent.16">
+        <item name="android:textAppearance">@style/Text.Regular.16.PrimaryColor</item>
+        <item name="android:textColor">?android:textColorPrimary</item>
+        <item name="android:background">@drawable/bg_accent_btn</item>
     </style>
 
 </resources>

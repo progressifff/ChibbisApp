@@ -3,6 +3,7 @@ package com.chibbis.chibbisapp.di
 import com.chibbis.base.scope.ApplicationScope
 import com.chibbis.base_feature.di.ErrorHandlerModule
 import com.chibbis.chibbisapp.App
+import com.chibbis.f_more.di.MoreModule
 import com.chibbis.f_restaurants.di.RestaurantsModule
 import com.chibbis.i_hits.di.HitsInteractorModule
 import com.chibbis.i_network.di.NetworkModule
@@ -21,6 +22,7 @@ import dagger.android.support.AndroidSupportInjectionModule
         ErrorHandlerModule::class,
         NetworkModule::class,
         RestaurantsModule::class,
+        MoreModule::class,
         RestaurantsInteractorModule::class,
         ReviewsInteractorModule::class,
         HitsInteractorModule::class

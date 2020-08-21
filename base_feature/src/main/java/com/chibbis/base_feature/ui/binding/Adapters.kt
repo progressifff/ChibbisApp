@@ -6,14 +6,12 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.chibbis.base_feature.ui.tools.extensions.setGroups
 import com.xwray.groupie.Group
 import com.xwray.groupie.GroupAdapter
 
-
 @BindingAdapter("app:items")
 fun installItems(view: RecyclerView, groups: List<Group>?) {
-    groups?.let { (view.adapter as? GroupAdapter)?.setGroups(it) }
+    groups?.let { (view.adapter as? GroupAdapter)?.updateAsync(it) }
 }
 
 @BindingAdapter("app:goneUnless")
@@ -24,6 +22,11 @@ fun goneUnless(view: View, visible: Boolean) {
 @BindingAdapter("app:url", "app:errorImage")
 fun loadImage(view: ImageView, url: String?, errorImage: Drawable?) {
     if (url != null && errorImage != null) {
-        Glide.with(view.context).load(url).error(errorImage).placeholder(errorImage).into(view)
+        Glide
+            .with(view.context)
+            .load(url)
+            .error(errorImage)
+            .placeholder(errorImage)
+            .into(view)
     }
 }

@@ -9,44 +9,61 @@
 
     </data>
 
-    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-        <com.google.android.material.appbar.AppBarLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:animateLayoutChanges="true" >
+            android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.Toolbar
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_scrollFlags="enterAlways|scroll"
-                app:title="@string/hits_title_text"
-                app:titleTextAppearance="@style/Text.Regular.18.PrimaryColor" />
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true">
 
-        </com.google.android.material.appbar.AppBarLayout>
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/tb"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="enterAlways|scroll"
+                    app:title="@string/hits_title_text"
+                    app:titleTextAppearance="@style/Text.Regular.18.PrimaryColor" />
 
-        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/hits_swr"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:onRefreshListener="@{() -> viewModel.onRefresh()}"
-            app:refreshing="@{viewModel.swrLiveData}">
+            </com.google.android.material.appbar.AppBarLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/hits_rv"
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/hits_swr"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:paddingBottom="12dp"
-                app:items="@{viewModel.restaurantsListLiveData.recyclerContent}"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:onRefreshListener="@{() -> viewModel.onRefresh()}"
+                app:refreshing="@{viewModel.swrLiveData}">
 
-        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/hits_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingBottom="12dp"
+                    app:items="@{viewModel.restaurantsListLiveData.recyclerContent}"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.chibbis.f_hits.view.IncreasedImageView
+            android:id="@+id/hits_increased_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/increasedImageViewBgColor"
+            android:visibility="gone"
+            android:onClick="@{(view) -> viewModel.onHitIncreasedImageClicked()}"
+            app:image="@{viewModel.hitLargeImageObservable}" />
+
+    </FrameLayout>
 
 </layout>

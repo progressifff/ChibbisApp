@@ -10,8 +10,10 @@
     <color name="textColorSecondary">@color/nobel</color>
     <color name="textColorTertiary">@color/dim_grey</color>
     <color name="colorWindowBackground">@color/pure_black</color>
-    <color name="colorWindowBackgroundTransparent">@color/black_24</color>
     <color name="rippleColor">@color/dim_grey</color>
     <color name="dividerColor">@color/very_light_gray</color>
     <color name="stubColor">@color/night_rider</color>
+    <color name="increasedImageViewBgColor">@color/black_50</color>
+    <color name="confirmPopupDialogBackgroundColor">@color/colorPrimary</color>
+    <color name="primaryBtnRippleColor">@color/white20</color>
 </resources>

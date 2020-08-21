@@ -7,4 +7,9 @@
         <attr name="cornerRadius" />
     </declare-styleable>
 
+    <declare-styleable name="RateView">
+        <attr name="starSpacing" format="dimension" />
+        <attr name="starCount" format="integer" />
+    </declare-styleable>
+
 </resources>

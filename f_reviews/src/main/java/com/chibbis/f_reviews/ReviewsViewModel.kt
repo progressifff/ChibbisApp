@@ -24,15 +24,13 @@ class ReviewsViewModel @Inject constructor(
 
     private val reviewsListMutableLiveData = MutableLiveData<RecyclerContent>()
     private val swrMutableLiveData = MutableLiveData<Boolean>()
-    private val reviewsStubContent =
-        RecyclerStubContent(layoutRes = R.layout.item_reviews_stub)
-
-    private var loadReviewsJob: Job? = null
-    private var reviewsData = LoadableData(
+    private val reviewsStubContent = RecyclerStubContent(layoutRes = R.layout.item_reviews_stub)
+    private val reviewsData = LoadableData(
         onMainLoading = ::reactToMainLoading,
         onSwrLoading = ::reactToSwrLoading,
         onDataReady = ::reactToReviewsReady
     )
+    private var loadReviewsJob: Job? = null
 
     val restaurantsListLiveData: LiveData<RecyclerContent> = reviewsListMutableLiveData
     val swrLiveData: LiveData<Boolean> = swrMutableLiveData
