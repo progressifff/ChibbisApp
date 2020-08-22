@@ -8,7 +8,7 @@ import com.xwray.groupie.databinding.BindableItem
 /**
  * Элемент UI списка отзывов
  */
-class ReviewItem(private val review: Review) : BindableItem<ItemReviewBinding>() {
+data class ReviewItem(private val review: Review) : BindableItem<ItemReviewBinding>() {
     override fun getLayout(): Int = R.layout.item_review
 
     override fun getId(): Long = review.hashCode().toLong()

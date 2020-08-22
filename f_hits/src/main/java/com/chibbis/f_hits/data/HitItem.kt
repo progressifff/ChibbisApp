@@ -9,7 +9,7 @@ import com.xwray.groupie.databinding.BindableItem
 /**
  * Элемент UI списка хитов продаж
  */
-class HitItem(
+data class HitItem(
     private val hit: Hit,
     private val onHitImageLongClick: (Drawable) -> Unit
 ) : BindableItem<ItemHitBinding>() {
