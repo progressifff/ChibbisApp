@@ -58,7 +58,7 @@ fun Restaurant.getMinCost(context: Context): CharSequence =
     context.getString(R.string.restaurant_min_cost_text, minCostRubs)
 
 fun Restaurant.getDeliveryCost(context: Context): CharSequence =
-    context.getString(R.string.price_text, minCostRubs)
+    context.getString(R.string.price_text, deliveryCostRubs)
 
 fun Hit.getComposition(context: Context): CharSequence =
     context.getString(R.string.hit_composition_text, productDescription)
