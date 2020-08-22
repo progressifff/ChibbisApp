@@ -8,7 +8,7 @@ import com.chibbis.base_feature.ui.view.ShimmerStubView
 import com.xwray.groupie.kotlinandroidextensions.GroupieViewHolder
 import com.xwray.groupie.kotlinandroidextensions.Item
 
-class RecyclerStubItem(
+data class RecyclerStubItem(
     @LayoutRes private val layoutRes: Int,
     private val isLoading: Boolean
 ) : Item() {
