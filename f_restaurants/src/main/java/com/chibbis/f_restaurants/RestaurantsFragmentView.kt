@@ -21,22 +21,18 @@ class RestaurantsFragmentView : BaseFragmentView<RestaurantsViewModel>() {
 
     override fun getContentView(): Int = R.layout.fragment_restaurants
 
-    override fun onCreateView(
+    override fun createRootView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val binding = DataBindingUtil.inflate<FragmentRestaurantsBinding>(
-            layoutInflater, getContentView(), container, false
-        )
-        return binding.apply {
-            binding.lifecycleOwner = this@RestaurantsFragmentView
-            viewModel = this@RestaurantsFragmentView.viewModel
-        }.root
-    }
+    ): View = DataBindingUtil.inflate<FragmentRestaurantsBinding>(
+        layoutInflater, getContentView(), container, false
+    ).apply {
+        lifecycleOwner = this@RestaurantsFragmentView
+        viewModel = this@RestaurantsFragmentView.viewModel
+    }.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onRootViewCreated() {
         initViews()
     }
 

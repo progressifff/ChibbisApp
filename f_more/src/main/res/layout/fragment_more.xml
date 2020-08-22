@@ -18,9 +18,9 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
             app:layout_scrollFlags="enterAlways|scroll"
             app:title="@string/more_title_text"
-            android:background="?attr/colorPrimary"
             app:titleTextAppearance="@style/Text.Regular.18.PrimaryColor" />
 
         <Button

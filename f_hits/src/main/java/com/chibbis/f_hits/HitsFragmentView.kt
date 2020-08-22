@@ -23,22 +23,18 @@ class HitsFragmentView : BaseFragmentView<HitsViewModel>() {
 
     override fun getContentView(): Int = R.layout.fragment_hits
 
-    override fun onCreateView(
+    override fun createRootView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val binding = DataBindingUtil.inflate<FragmentHitsBinding>(
-            layoutInflater, getContentView(), container, false
-        )
-        return binding.apply {
-            binding.lifecycleOwner = this@HitsFragmentView
-            viewModel = this@HitsFragmentView.viewModel
-        }.root
-    }
+    ): View = DataBindingUtil.inflate<FragmentHitsBinding>(
+        layoutInflater, getContentView(), container, false
+    ).apply {
+        lifecycleOwner = this@HitsFragmentView
+        viewModel = this@HitsFragmentView.viewModel
+    }.root
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onRootViewCreated() {
         initViews()
     }
 
@@ -48,7 +44,8 @@ class HitsFragmentView : BaseFragmentView<HitsViewModel>() {
 
     companion object {
         @BindingAdapter("app:image")
-        @JvmStatic fun renderIncreasedImage(view: IncreasedImageView, drawable: Drawable?) {
+        @JvmStatic
+        fun renderIncreasedImage(view: IncreasedImageView, drawable: Drawable?) {
             view.render(drawable)
         }
     }

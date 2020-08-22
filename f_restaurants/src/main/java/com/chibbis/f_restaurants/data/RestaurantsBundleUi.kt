@@ -1,6 +1,7 @@
 package com.chibbis.f_restaurants.data
 
 import com.chibbis.base_feature.BR
+import com.chibbis.base_feature.consts.EMPTY_STRING
 import com.chibbis.base_feature.ui.recycler.RecyclerTextItem
 import com.chibbis.base_feature.ui.recycler.SimpleRecyclerContent
 import com.chibbis.domain.restaurant.Restaurant
@@ -12,7 +13,7 @@ import com.xwray.groupie.Group
  */
 class RestaurantsBundleUi(
     restaurants: List<Restaurant> = emptyList(),
-    filter: String = ""
+    filter: String = EMPTY_STRING
 ) : SimpleRecyclerContent<Restaurant, RestaurantItem>(
     data = restaurants,
     itemMapper = { RestaurantItem(it) }

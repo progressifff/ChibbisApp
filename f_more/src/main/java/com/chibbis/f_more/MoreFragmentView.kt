@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.chibbis.base_feature.ui.view.BaseFragmentView
 import com.chibbis.f_more.databinding.FragmentMoreBinding
@@ -20,22 +19,18 @@ class MoreFragmentView : BaseFragmentView<MoreViewModel>() {
 
     override fun getContentView(): Int = R.layout.fragment_more
 
-    override fun onCreateView(
+    override fun createRootView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        val binding = DataBindingUtil.inflate<FragmentMoreBinding>(
-            layoutInflater, getContentView(), container, false
-        )
-        return binding.apply {
-            binding.lifecycleOwner = this@MoreFragmentView
-            viewModel = this@MoreFragmentView.viewModel
-        }.root
-    }
+    ): View = DataBindingUtil.inflate<FragmentMoreBinding>(
+        layoutInflater, getContentView(), container, false
+    ).apply {
+        lifecycleOwner = this@MoreFragmentView
+        viewModel = this@MoreFragmentView.viewModel
+    }.root
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onRootViewCreated() {
         more_app_rate_dialog_btn.setOnClickListener {
             findNavController().navigate(R.id.moreRateDialog)
         }
