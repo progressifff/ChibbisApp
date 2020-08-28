@@ -18,18 +18,18 @@ class LoadableData<T>(
         loadStatus?.let { this.loadStatus = it }
         isSwr?.let { this.isSwr = it }
 
-        verifySwrLoading()
-        verifyMainLoading()
+        verifySwrLoadingState()
+        verifyMainLoadingState()
         verifyDataReadyState()
     }
 
-    private fun verifyMainLoading() {
+    private fun verifyMainLoadingState() {
         if (data == null && !loadStatus.isNormal) {
             onMainLoading(loadStatus.isLoading)
         }
     }
 
-    private fun verifySwrLoading() {
+    private fun verifySwrLoadingState() {
         if (isSwr) {
             onSwrLoading(loadStatus.isLoading)
         }
